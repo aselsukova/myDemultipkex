@@ -10,6 +10,9 @@ parser.add_argument("out_dir",type=str)
 
 args = parser.parse_args()
 
+if not os.path.exists(args.out_dir):
+    os.makedirs(args.out_dir)
+
 base_index_dict = {}
 with open(args.indexesfile) as fin:
     for line in fin:
