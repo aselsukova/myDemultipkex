@@ -30,7 +30,7 @@ r2 = gzip.open(r2)
 
 out_descriptors = []
 
-DM = demultiplexer()
+DM = demultiplexer(base_index_dict=base_index_dict)
 
 for r in [0,1]:
     out_descriptors[r] = dict([(k,gzip.open(
