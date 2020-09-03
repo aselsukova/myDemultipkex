@@ -7,10 +7,10 @@ class demultiplexer():
         # {"AAAAA+AAAAA" : sample_name}
 
         self.base_index_dict = base_index_dict
+        self.undetermined_name = undetermined_name
         self.base_index_dict["NNNN"] = self.undetermined_name
         self.index_dict = base_index_dict
         self.maxdist = maxdist
-        self.undetermined_name = undetermined_name
 
     def demultiplex(self, index):
         try: # if we've already seen this index
