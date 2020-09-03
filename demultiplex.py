@@ -34,7 +34,7 @@ DM = demultiplexer(base_index_dict=base_index_dict)
 
 for r in [0,1]:
     out_descriptors[r] = dict([(k,gzip.open(
-        os.path.join(args.outdir,k+"_"+str(r+1)+".fq.gz"),"w"))\
+        os.path.join(args.out_dir,k+"_"+str(r+1)+".fq.gz"),"w"))\
                                 for k in DM.get_output_names()])
 
 while r1:
