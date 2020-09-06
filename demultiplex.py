@@ -52,8 +52,9 @@ for fname in args.input_files:
     for line in r1:
             count += 1
             rname = line
-            decoded = rname#    .decode("utf-8")
+            decoded = rname #.decode("utf-8")
             index = decoded.strip().split(":")[-1]
+        
             sample_name = DM.demultiplex(index)
             matrix.loc[fname,sample_name] += 1
             out_descriptors[0][sample_name].write(decoded)
