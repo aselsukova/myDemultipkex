@@ -34,7 +34,7 @@ out_descriptors = []
 
 for r in [0,1]:
         out_descriptors.append(dict([(k,open(
-            os.path.join(args.out_dir,k+"_"+str(r+1)+".fq.gz"),"w"))\
+            os.path.join(args.out_dir,k+"_"+str(r+1)+".fq"),"w"))\
                                     for k in DM.get_output_names()]))
 
 start_time = datetime.datetime.now()
@@ -52,7 +52,7 @@ for fname in args.input_files:
     for line in r1:
             count += 1
             rname = line
-            decoded = rname.decode("utf-8")
+            decoded = rname#    .decode("utf-8")
             index = decoded.strip().split(":")[-1]
             sample_name = DM.demultiplex(index)
             matrix.loc[fname,sample_name] += 1
