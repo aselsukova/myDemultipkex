@@ -17,7 +17,7 @@ class demultiplexer():
             return self.index_dict[index]
         except KeyError:
             relevant_base_index = self.find_index(index)
-            self.index_dict[index] = self.index_dict[relevant_base_index] # save index for next search
+            #self.index_dict[index] = self.index_dict[relevant_base_index] # save index for next search
             return self.index_dict[relevant_base_index]
 
     def find_index(self,index):
